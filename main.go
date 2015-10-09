@@ -48,7 +48,9 @@ var listTpl = template.Must(template.New("").Parse(`
 	<h3>Index of {{.Path}}</h3>
 	<table>
 	{{range .Infos}}
-	<tr><td>{{if .IsDir}}D{{end}}</td><td><a href="./{{.Name}}{{if .IsDir}}/{{end}}">{{.Name}}{{if .IsDir}}/{{end}}</a></td></tr>
+	<tr><td>{{if .IsDir}}D{{end}}</td><td><a href="./{{.Name}}{{if .IsDir}}/{{end}}">{{.Name}}{{if .IsDir}}/{{end}}</a></td>
+	<td>{{.Size}}</td>
+	</tr>
 	{{end}}
 	</table>
 `))
